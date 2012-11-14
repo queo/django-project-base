@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Python
+*.pyc
+*.pyo
+
+# Common IDEs
+.pydevproject
+.project
+.settings
+
+# virtualenv
+/env
+
+# Project
+/{{ project_name }}/local_settings.py
+/media
+/backups
+
+# SASS
+*.sass-cache

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- Django base template using Bootstrap (http://twitter.github.com/bootstrap/) -->
+{% load sekizai_tags compress cache %}
+<html>
+	<head>
+		<title>{% block head_title %}{% endblock %} | {{ project_name|title }}</title>
+
+		<!-- styles include here -->
+		{% render_block "css" postprocessor "postprocess_sekizai.compress" %}
+		{% addtoblock "css" %}
+		<link href="{{ STATIC_URL }}site/css/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css" />
+		<link href="{{ STATIC_URL }}site/css/print.css" media="print" rel="stylesheet" type="text/css" />
+		<!--[if IE]>
+		<link href="{{ STATIC_URL }}site/css/ie.css" media="screen, projection, print" rel="stylesheet" type="text/css" />
+		<![endif]-->
+		{% endaddtoblock %}
+	</head>
+	<body>
+		<!-- Insert content here -->
+
+		<!-- js include here -->
+		{% render_block "js" postprocessor "postprocess_sekizai.compress" %}
+		{% addtoblock "js" %}
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="{{ STATIC_URL }}site/js/bootstrap.min.js"></script>
+		{% endaddtoblock %}
+	</body>
+</html>
