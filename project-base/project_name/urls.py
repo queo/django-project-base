@@ -12,6 +12,13 @@ urlpatterns = patterns('',
     #(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '%ssite/images/favicon.ico' % settings.STATIC_URL}),
 )
 
+# add cms urls if is installed
+if 'cms' in settings.INSTALLED_APPS:
+    urlpatterns = patterns('',
+        url(r'^', include('cms.urls')),                      
+) + urlpatterns
+
+# debug static and media fiels urls
 if settings.DEBUG:
     urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',

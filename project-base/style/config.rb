@@ -1,12 +1,13 @@
+require 'bootstrap-sass'
 # Require any additional compass plugins here.
-require 'susy'
+
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "../{{ project_name }}/static/css"
+css_dir = "../project_name/static/css"
 sass_dir = "sass"
-images_dir = "../{{ project_name }}/static/images"
-javascripts_dir = "../{{ project_name }}/static/js"
+images_dir = "../project_name/static/images"
+javascripts_dir = "../project_name/static/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
@@ -18,4 +19,3 @@ javascripts_dir = "../{{ project_name }}/static/js"
 # line_comments = false
 
 preferred_syntax = :sass
-output_style = :compressed

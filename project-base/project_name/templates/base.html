@@ -3,7 +3,7 @@
 {% load sekizai_tags compress cache %}
 <html>
 	<head>
-		<title>{% block head_title %}{% endblock %} | {{ project_name|title }}</title>
+		<title>{% block head_title %}{% endblock %} | {{ project_name }}</title>
 
 		<!-- styles include here -->
 		{% render_block "css" postprocessor "postprocess_sekizai.compress" %}
@@ -17,7 +17,55 @@
 	</head>
 	<body>
 		<!-- Insert content here -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="brand" href="#">{{ project_name }}</a>
+					<!--<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li class="active">
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#about">About</a>
+							</li>
+							<li>
+								<a href="#contact">Contact</a>
+							</li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</div>
+		</div>
 
+		<div class="container">
+			<h1>QUEO Bootstrap starter template</h1>
+			<p>
+				Use this document as a way to quick start any new project.
+				<br>
+				All you get is this message and a barebones HTML document.
+				<br>
+			</p>
+			<h2>Next steps</h2>
+			<h3>1. Override template</h3>
+			<p>
+				Now is time to override this template and create your own, powerfull layouts.
+			</p>
+			<h3>2. Add Apps</h3>
+			<p>
+				Add your own apps to add functionalities and possibilities to the project.
+			</p>
+			<h3>Insert content</h3>
+			<p>
+				Insert text and photos to make great things beautiful.
+			</p>
+			{% block content %}{% endblock %}
+		</div>
 		<!-- js include here -->
 		{% render_block "js" postprocessor "postprocess_sekizai.compress" %}
 		{% addtoblock "js" %}

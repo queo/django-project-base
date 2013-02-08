@@ -1,9 +1,9 @@
-CherryPy==3.2.2
-Django==1.4.2
-MySQL-python==1.2.4c1
-South==0.7.6
-django-classy-tags==0.3.4.1
-django-sekizai==0.6.1
-wsgiref==0.1.2
+Django
+MySQL-python
+South
+django-classy-tags
+django-sekizai
+wsgiref
 django-compressor
+django-cms
 

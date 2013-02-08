@@ -4,11 +4,11 @@ import sys
 
 gettext = lambda s: s
 #PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
-PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+PROJECT_PATH = os.path.realpath('../' + os.path.dirname(__file__))
 
 # add apps folders
 for d in ['plugins', 'apps', 'lib']:
-    sys.path.insert(0, os.path.join(PROJECT_PATH, d))
+    sys.path.insert(0, os.path.join(PROJECT_PATH, '../' + d))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -88,7 +88,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = {{ secret_key }}
+SECRET_KEY = '{{ secret_key }}'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -97,7 +97,7 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
+TEMPLATE_CONTEXT_PROCESSORS = [
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.debug',
@@ -105,16 +105,16 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
-)
+]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
 ROOT_URLCONF = '{{ project_name }}.urls'
 
@@ -125,7 +125,7 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "templates"),
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -133,7 +133,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-)
+    
+    'compressor',
+    'south',
+]
 
 # COMPRESSOR
 COMPRESS_ENABLED = not DEBUG
@@ -166,8 +169,3 @@ LOGGING = {
         },
     }
 }
-
-try:
-    from local_settings import *
-except ImportError:
-    pass
