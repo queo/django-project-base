@@ -4,7 +4,7 @@ import sys
 
 gettext = lambda s: s
 #PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
-PROJECT_PATH = os.path.realpath('../' + os.path.dirname(__file__))
+PROJECT_PATH = os.path.join(os.path.realpath(os.path.dirname(__file__)), '../')
 
 # add apps folders
 for d in ['plugins', 'apps', 'lib']:
@@ -55,7 +55,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/queo.pt/media/"
-MEDIA_ROOT = os.path.join(PROJECT_PATH, '../media/')
+MEDIA_ROOT = os.path.join(PROJECT_PATH, '../../media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -84,7 +84,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    'compressor.finders.CompressorFinder',
+    #'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -134,12 +134,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
     
-    'compressor',
+    #'compressor',
     'south',
 ]
 
 # COMPRESSOR
-COMPRESS_ENABLED = not DEBUG
+#COMPRESS_ENABLED = not DEBUG
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
