@@ -14,9 +14,9 @@ urlpatterns = patterns('',
 
 # add cms urls if is installed
 if 'cms' in settings.INSTALLED_APPS:
-    urlpatterns = patterns('',
+    urlpatterns += patterns('',
         url(r'^', include('cms.urls')),                      
-) + urlpatterns
+)
 
 # debug static and media fiels urls
 if settings.DEBUG:
