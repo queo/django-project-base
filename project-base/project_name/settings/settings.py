@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Django settings for {{ project_name }} project.
 import os
 import sys
@@ -8,13 +9,13 @@ PROJECT_PATH = os.path.join(os.path.realpath(os.path.dirname(__file__)), '../')
 
 # add apps folders
 for d in ['plugins', 'apps', 'lib']:
-    sys.path.insert(0, os.path.join(PROJECT_PATH, '../' + d))
+    sys.path.insert(0, os.path.join(PROJECT_PATH, '../', d))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('500', 'quinhentos@queo.pt'),
 )
 
 MANAGERS = ADMINS
