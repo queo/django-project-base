@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from settings import INSTALLED_APPS, MIDDLEWARE_CLASSES, TEMPLATE_CONTEXT_PROCESSORS, STATIC_URL, gettext
 
 INSTALLED_APPS += [
