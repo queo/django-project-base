@@ -15,3 +15,7 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+# to create a database (be sure to change username as you need):
+# mysql -uroot -p -e "create database {{ project_name }}_devel"
+
