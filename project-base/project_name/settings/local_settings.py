@@ -19,3 +19,5 @@ DATABASES = {
 # to create a database (be sure to change username as you need):
 # mysql -uroot -p -e "create database {{ project_name }}_devel"
 
+MEMCACHE_ENABLED = False
+
