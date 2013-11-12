@@ -14,7 +14,6 @@
 /env
 
 # Project
-*local_settings.py
 /{{ project_name }}/{{ project_name }}/local_settings.py
 /{{ project_name }}/local_settings.py
 /media
